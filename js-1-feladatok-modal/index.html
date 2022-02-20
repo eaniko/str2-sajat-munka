@@ -1,56 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
+    <h2>Animated Modal with Header and Footer</h2>
 
-    <h1>Modal</h1>
-    <button id="openBtn">Open Modal</button>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" onclick="openModal()">Open Modal</button>
 
+    <!-- The Modal -->
     <div id="myModal" class="modal">
+        <!-- Modal content -->
         <div class="modal-content">
-            <header>Modal text
-                <span class="close">&times;</span>
-            </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis
-                lorem euismod tortor egestas blandit. Fusce posuere sed ligula sit amet aliquam.
-                Quisque consequat metus ac elit finibus sagittis. Ut quis aliquet sem.
-                Cras gravida nunc et justo varius faucibus. Aliquam maximus ex tortor,
-                non luctus ligula tristique ut. Sed vel dolor a velit auctor suscipit vitae in odio.
-            </p>
-            <footer>
-                <button id=cancelBtn>Cancel</button>
-                <button id=okeyBtn>Okey</button>
-            </footer>
+            <div class="modal-header">
+                <span id="closeModal" onclick="modalExit()">&times;</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+                <div class="button-container">
+                    <button class="btn btn-ok">Okay</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        let modal = document.getElementById("myModal");
-        let openBtn = document.getElementById("openBtn");
-        let span = document.getElementsByClassName("close")[0];
-
-        openBtn.onclick = () => document.getElementById("myModal").classList.add("modalClose");
-
-        span.onclick = () => document.getElementById("myModal").classList.remove("modalClose");
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                document.getElementById("myModal").classList.remove("modalClose");
-            }
-        }
-    </script>
-
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>
-© 2022 GitHub, Inc.
-Terms
-Privacy
